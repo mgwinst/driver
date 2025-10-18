@@ -1,1 +1,0 @@
-savedcmd_/home/matteo/driver/test_cdev/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/matteo/driver/test_cdev/Module.symvers -T /home/matteo/driver/test_cdev/modules.order -i Module.symvers -e 

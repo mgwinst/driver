@@ -1,10 +1,19 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/fs.h>
+#include <linux/types.h>
 
 static int major;
 
-static struct file_operations fops = {};
+static ssize_t test_read(struct file* f, char __user* u, size_t len, loff_t* offset)
+{
+    printk("test_cdev - read() is called\n");
+    return 0;
+}
+
+static struct file_operations fops = {
+    .read = test_read
+};
 
 static int __init test_init(void)
 {

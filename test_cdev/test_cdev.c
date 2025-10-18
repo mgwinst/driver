@@ -7,7 +7,7 @@ static int major;
 
 static ssize_t test_read(struct file* f, char __user* u, size_t len, loff_t* offset)
 {
-    printk("test_cdev - read() is called\n");
+    pr_info("test_cdev - read() is called\n");
     return 0;
 }
 
@@ -19,17 +19,17 @@ static int __init test_init(void)
 {
     major = register_chrdev(0, "test_cdev", &fops);
     if (major < 0) {
-        printk("test_cdev - failed to register test_cdev\n");
+        pr_err("test_cdev - failed to register test_cdev\n");
         return major;
     }
-    printk("successfully registered test_cdev - Device major number: [%d]\n", major);
+    pr_info("successfully registered test_cdev - Device major number: [%d]\n", major);
     return 0;
 }
 
 static void __exit test_exit(void)
 {
     unregister_chrdev(major, "test_cdev");
-    printk("successfully unregistered test_cdev\n");
+    pr_info("successfully unregistered test_cdev\n");
 }
 
 module_init(test_init);

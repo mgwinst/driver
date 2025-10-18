@@ -35,12 +35,16 @@ MODULE_INFO(retpoline, "Y");
 
 static const char ____versions[]
 __used __section("__versions") =
-	"\x1c\x00\x00\x00\xca\x39\x82\x5b"
-	"__x86_return_thunk\0\0"
-	"\x14\x00\x00\x00\xbb\x6d\xfb\xbd"
-	"__fentry__\0\0"
 	"\x10\x00\x00\x00\x7e\x3a\x2c\x12"
 	"_printk\0"
+	"\x1c\x00\x00\x00\xca\x39\x82\x5b"
+	"__x86_return_thunk\0\0"
+	"\x1c\x00\x00\x00\xc0\xfb\xc3\x6b"
+	"__unregister_chrdev\0"
+	"\x14\x00\x00\x00\xbb\x6d\xfb\xbd"
+	"__fentry__\0\0"
+	"\x1c\x00\x00\x00\xbf\x1d\x24\x21"
+	"__register_chrdev\0\0\0"
 	"\x18\x00\x00\x00\xeb\x7b\x33\xe1"
 	"module_layout\0\0\0"
 	"\x00\x00\x00\x00\x00\x00\x00\x00";
@@ -48,4 +52,4 @@ __used __section("__versions") =
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "6E564E2D72A180F909C591D");
+MODULE_INFO(srcversion, "3BE51A0E00CB87E12D782C5");
